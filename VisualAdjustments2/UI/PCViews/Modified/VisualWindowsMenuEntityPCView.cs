@@ -16,15 +16,15 @@ namespace VisualAdjustments2.UI
             switch (windowtype)
             {
                 case VisualWindowType.Doll:
-                    return "Doll";
+                    return "角色模型";
                 case VisualWindowType.EEPicker:
-                    return "EE Picker";
+                    return "部件选择";
                 case VisualWindowType.Equipment:
-                    return "Equipment";
+                    return "职业装备";
                 case VisualWindowType.FXViewer:
-                    return "Buff FX's";
+                    return "状态特效";
                 case VisualWindowType.Portrait:
-                    return "Portrait";
+                    return "人物肖像";
                 default:
                     return "";
             }

@@ -3,7 +3,7 @@
   <Import Project="..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props" Condition="Exists('..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <InstallDir Condition=" '$(InstallDir)' == '' ">$(WrathPath)</InstallDir>
+    <InstallDir Condition=" '$(InstallDir)' == '' ">E:\GOG\Games\Pathfinder Wrath of the Righteous</InstallDir>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -263,9 +263,9 @@
     <Error Condition="!Exists('..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>echo "$(TargetPath)" "&gt;$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).dll*"
-		xcopy /Y "$(TargetPath)" "$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).dll*"
-		xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).pdb*"
-	</PostBuildEvent>
+    <PostBuildEvent>echo "$(TargetPath)" "&gt;$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).dll*"
+      xcopy /Y "$(TargetPath)" "$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).dll*"
+      xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).pdb*"
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

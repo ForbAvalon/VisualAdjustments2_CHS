@@ -87,7 +87,7 @@ namespace VisualAdjustments2
                 if (m_Classes == null)
                 {
                     m_Classes = new List<(string, string)>();
-                    m_Classes.Add(("Default", ""));
+                    m_Classes.Add(("默认装备", ""));
                     var bps = Kingmaker.Cheats.Utilities.GetAllBlueprints();
 #if DEBUG
                     Main.Logger.Log(bps.Entries.Where(a => a.Type == typeof(BlueprintCharacterClass)).Count() +
@@ -289,7 +289,7 @@ namespace VisualAdjustments2
                         .SetAsLastSibling();
                     var label = newbutton.Find("Label");
                     var labelcomp = label.GetComponent<TextMeshProUGUI>();
-                    labelcomp.text = "Visual";
+                    labelcomp.text = "视觉";
                     var component = newbutton.gameObject.GetComponent<ServiceWindowsMenuEntityPCView>();
 
                     var dollroomcomp = newdollroom.GetComponent<DollCharacterController>();
@@ -405,7 +405,7 @@ namespace VisualAdjustments2
                             alleelistview.transform.localPosition = new Vector3(-650, -50, 0);
                             var oldcomp = alleelistview.GetComponent<CharGenFeatureSelectorPCView>();
                             var newcompl = alleelistview.AddComponent<BuffListPCView>();
-                            newcompl.SetupFromChargenList(oldcomp, false, "Current Buffs");
+                            newcompl.SetupFromChargenList(oldcomp, false, "当前状态");
                             UnityEngine.Component.Destroy(oldcomp);
                             {
                                 // var SelectedTransform = newgameobject.transform.parent.Find("InventoryPCView/Inventory/Stash/StashContainer/PC_FilterBlock/FilterPCView/SwitchBar/All/Selected");
@@ -457,7 +457,7 @@ namespace VisualAdjustments2
 
                                 LabelGameObject.transform.SetAsLastSibling();
                                 //PrimButton.gameObject.AddComponent<LayoutElement>();
-                                buttonTextComponent.text = "Toggle Mode";
+                                buttonTextComponent.text = "切换模式";
                                 togglegroup.Setup(PrimButton.GetComponent<OwlcatButton>(),
                                     LabelGameObject.GetComponent<TextMeshProUGUI>());
                                 FXViewerPCView.m_WhiteOrBlacklist = togglegroup;
@@ -483,7 +483,7 @@ namespace VisualAdjustments2
                                 newButton.EnsureComponent<LayoutElement>().flexibleHeight = ((Single)(0.005));
                                 var view = newButton.GetComponent<CharacterVisualSettingsEntityPCView>();
                                 FXViewerPCView.m_FixScaleButton = view;
-                                view.m_Label.text = "Fix Scale";
+                                view.m_Label.text = "修复缩放";
                                 FXViewerPCView.m_FixScaleButton = view;
                             }
                             FXViewerPCView.m_CurrentFX = newcompl;
@@ -498,7 +498,7 @@ namespace VisualAdjustments2
                             alleelistview.transform.localPosition = new Vector3(650, -50, 0);
                             var oldcomp = alleelistview.GetComponent<CharGenFeatureSelectorPCView>();
                             var newcompl = alleelistview.AddComponent<BuffListPCView>();
-                            newcompl.SetupFromChargenList(oldcomp, true, "All Buffs");
+                            newcompl.SetupFromChargenList(oldcomp, true, "所有增益");
                             UnityEngine.Component.Destroy(oldcomp);
                             FXViewerPCView.m_AllFX = newcompl;
                             newcompl.VirtualList.m_ScrollSettings.ScrollWheelSpeed = 333;
@@ -534,7 +534,7 @@ namespace VisualAdjustments2
                                         //   FXViewerPCView.m_FixScaleButton.Bind(new CharacterVisualSettingsEntityVM(Game.Instance.SelectionCharacter.SelectedUnit.Value.Value.GetSettings().BuffSettings.FixSize,FXViewerPCView.SetFixScale));//FXViewerPCView.m_FixScaleButton.ViewModel.IsOn.Value = Game.Instance.SelectionCharacter.SelectedUnit.Value.Value.GetSettings().BuffSettings.FixSize;
                                     });
                                 view.Bind(vmnew);
-                                view.m_Label.text = "Global Profile";
+                                view.m_Label.text = "全局配置";
                                 // view.Bind("Use Global Profile", () => { GlobalCharacterSettings.Instance.useGlobalBuffProfile = view.IsOnState.Value; FXViewerPCView?.ViewModel?.OnUnitChanged(); if (Game.Instance?.SelectionCharacter?.SelectedUnit?.Value?.Unit != null) FXViewerPCView.m_FixScaleButton.IsOnState.Value = Game.Instance.SelectionCharacter.SelectedUnit.Value.Unit.GetSettings().BuffSettings.FixSize; }, () => { return GlobalCharacterSettings.Instance.useGlobalBuffProfile; });
                             }
                         }
@@ -602,20 +602,20 @@ namespace VisualAdjustments2
                         Dictionary<WeaponAnimationStyle, int> m_AnimToInt = new Dictionary<WeaponAnimationStyle, int>();
                         var enumList = new Dictionary<WeaponAnimationStyle, string>()
                         {
-                            [WeaponAnimationStyle.Bow] = "Bows",
-                            [WeaponAnimationStyle.Crossbow] = "Crossbows",
-                            [WeaponAnimationStyle.Dagger] = "Daggers",
-                            [WeaponAnimationStyle.ThrownStraight] = "Dart/Javelin",
-                            [WeaponAnimationStyle.Double] = "Double Bladed/Quarterstaves",
-                            [WeaponAnimationStyle.Fencing] = "Fencing Blades",
-                            [WeaponAnimationStyle.PiercingOneHanded] = "One-Handed Polearms",
-                            [WeaponAnimationStyle.SlashingOneHanded] = "One-Handed Slashing/Blunt Weapons",
-                            [WeaponAnimationStyle.Fist] = "Punching Daggers",
-                            [WeaponAnimationStyle.Shield] = "Shields",
-                            [WeaponAnimationStyle.ThrownArc] = "Throwing Axes",
-                            [WeaponAnimationStyle.AxeTwoHanded] = "Two Handed Axes",
-                            [WeaponAnimationStyle.PiercingTwoHanded] = "Two-Handed Polearms",
-                            [WeaponAnimationStyle.SlashingTwoHanded] = "Two-Handed Slashing/Blunt Weapons",
+                            [WeaponAnimationStyle.Bow] = "弓",
+                            [WeaponAnimationStyle.Crossbow] = "十字弩",
+                            [WeaponAnimationStyle.Dagger] = "匕首",
+                            [WeaponAnimationStyle.ThrownStraight] = "飞镖/标枪",
+                            [WeaponAnimationStyle.Double] = "双头剑/木棍",
+                            [WeaponAnimationStyle.Fencing] = "细剑",
+                            [WeaponAnimationStyle.PiercingOneHanded] = "单手长柄武器",
+                            [WeaponAnimationStyle.SlashingOneHanded] = "单手挥砍/钝化武器",
+                            [WeaponAnimationStyle.Fist] = "拳刃",
+                            [WeaponAnimationStyle.Shield] = "盾牌",
+                            [WeaponAnimationStyle.ThrownArc] = "飞斧",
+                            [WeaponAnimationStyle.AxeTwoHanded] = "双手斧",
+                            [WeaponAnimationStyle.PiercingTwoHanded] = "双手长柄武器",
+                            [WeaponAnimationStyle.SlashingTwoHanded] = "双手挥砍/钝化武器",
                             //[(WeaponAnimationStyle)14] = "Enchant"
                         };
                         for (int i = 0; i < enumList.Count(); i++)
@@ -685,7 +685,7 @@ namespace VisualAdjustments2
                                 .gameObject.SetActive(false);
                             clickablePageNav.transform.SetParent(page);
                             var lbl = clickablePageNav.Find("Label").GetComponent<TextMeshProUGUI>();
-                            lbl.text = "Weapon Set";
+                            lbl.text = "武器设置";
                             lbl.verticalAlignment = VerticalAlignmentOptions.Geometry;
                             clickablePageNav.localScale = new Vector3(1, 1, 1);
                             clickablePageNav.GetComponent<LayoutElement>().minWidth = 545;
@@ -757,7 +757,7 @@ namespace VisualAdjustments2
                                     .GetComponent<Image>());
 
                                 PrimButton.Find("FinneanLabel").gameObject.SetActive(false);
-                                PrimButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Main Hand";
+                                PrimButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "主手";
                                 PrimButton.gameObject.AddComponent<LayoutElement>();
 
                                 var SecButton = UnityEngine.GameObject.Instantiate(
@@ -773,7 +773,7 @@ namespace VisualAdjustments2
 
 
                                 SecButton.Find("FinneanLabel").gameObject.SetActive(false);
-                                SecButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Off Hand";
+                                SecButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "副手";
                                 SecButton.gameObject.AddComponent<LayoutElement>();
 
                                 togglegroup.Setup(PrimButton.GetComponent<OwlcatButton>(),
@@ -833,7 +833,7 @@ namespace VisualAdjustments2
                             var thingg = lblgm.gameObject.AddComponent<LayoutElement>();
                             thingg.minWidth = 500;
                             var lbl = lblgm.GetComponent<TextMeshProUGUI>();
-                            lbl.text = "Hide Equipment";
+                            lbl.text = "隐藏装备";
                             lbl.verticalAlignment = VerticalAlignmentOptions.Geometry;
                             var buttontemplate = newgameobject.transform.Find(
                                 "DollRoom(Clone)/CharacterVisualSettingsView/WindowContainer/SettingsEntity");
@@ -878,18 +878,18 @@ namespace VisualAdjustments2
                                 Dictionary<HideButtonType, string> enumValuesNames =
                                     new Dictionary<HideButtonType, string>()
                                     {
-                                        [HideButtonType.Armor] = "Armour",
-                                        [HideButtonType.Feet] = "Boots",
-                                        [HideButtonType.Glasses] = "Glasses", //Maybe mask or smthn
-                                        [HideButtonType.Gloves] = "Gloves",
-                                        [HideButtonType.Head] = "Head",
-                                        [HideButtonType.Shirt] = "Shirt",
-                                        [HideButtonType.Shoulders] = "Cape",
-                                        [HideButtonType.Wrist] = "Bracers",
-                                        [HideButtonType.Usable] = "Belt items",
-                                        [HideButtonType.Weapon] = "Sheaths",
-                                        [HideButtonType.Class_Equipment] = "Class Gear",
-                                        [HideButtonType.Mythic_Things] = "Mythic"
+                                        [HideButtonType.Armor] = "护甲",
+                                        [HideButtonType.Feet] = "鞋子",
+                                        [HideButtonType.Glasses] = "面部", //Maybe mask or smthn
+                                        [HideButtonType.Gloves] = "手套",
+                                        [HideButtonType.Head] = "头盔",
+                                        [HideButtonType.Shirt] = "衣服",
+                                        [HideButtonType.Shoulders] = "披风",
+                                        [HideButtonType.Wrist] = "护腕",
+                                        [HideButtonType.Usable] = "腰带物品",
+                                        [HideButtonType.Weapon] = "箭袋",
+                                        [HideButtonType.Class_Equipment] = "职业装备",
+                                        [HideButtonType.Mythic_Things] = "神话"
                                     };
 
                                 Transform toAttachTo = null;
@@ -950,7 +950,7 @@ namespace VisualAdjustments2
                             {
                                 var newheader = GameObject.Instantiate(lblgm.parent, parent);
                                 var lbl2 = newheader.Find("Label").GetComponent<TextMeshProUGUI>();
-                                lbl2.text = "Class Outfit";
+                                lbl2.text = "职业套装";
 
 
                                 var superparent = new GameObject("superparent2");
@@ -1440,7 +1440,7 @@ namespace VisualAdjustments2
                 alleelistview.transform.localPosition = new Vector3(650, -50, 0);
                 var oldcomp = alleelistview.GetComponent<CharGenFeatureSelectorPCView>();
                 var newcompl = alleelistview.AddComponent<ListPCView>();
-                newcompl.SetupFromChargenList(oldcomp, true, "All EEs");
+                newcompl.SetupFromChargenList(oldcomp, true, "所有部件");
                 newcompl.VirtualList.m_ScrollSettings.ScrollWheelSpeed = 666;
                 UnityEngine.Component.Destroy(oldcomp);
                 EEPickerPCView.m_AllEEs = newcompl;
@@ -1456,7 +1456,7 @@ namespace VisualAdjustments2
                 alleelistview.transform.localPosition = new Vector3(-650, -50, 0);
                 var oldcomp = alleelistview.GetComponent<CharGenFeatureSelectorPCView>();
                 var newcompl = alleelistview.AddComponent<ListPCView>();
-                newcompl.SetupFromChargenList(oldcomp, false, "Current EEs");
+                newcompl.SetupFromChargenList(oldcomp, false, "当前部件");
                 UnityEngine.Component.Destroy(oldcomp);
                 EEPickerPCView.m_CurrentEEs = newcompl;
                 //Reset Changes button
@@ -1467,7 +1467,7 @@ namespace VisualAdjustments2
                         alleelistview.transform.Find("HeaderH2"));
                     // ResetButtonGameObject.localPosition = new Vector3(-195, -398, 0);
                     ResetButtonGameObject.Find("FinneanLabel").gameObject.SetActive(false);
-                    ResetButtonGameObject.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Reset";
+                    ResetButtonGameObject.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "重置";
                     var owlbutt = ResetButtonGameObject.GetComponent<OwlcatButton>();
                     var element = ResetButtonGameObject.gameObject.AddComponent<LayoutElement>();
                     element.minWidth = 100;
@@ -1485,7 +1485,7 @@ namespace VisualAdjustments2
                         alleelistview.transform.Find("HeaderH2"));
                     // ResetButtonGameObject.localPosition = new Vector3(-195, -398, 0);
                     ResetButtonGameObject.Find("FinneanLabel").gameObject.SetActive(false);
-                    ResetButtonGameObject.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Reset To Default";
+                    ResetButtonGameObject.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "重置为默认";
                     var owlbutt = ResetButtonGameObject.GetComponent<OwlcatButton>();
                     var element = ResetButtonGameObject.gameObject.AddComponent<LayoutElement>();
                     element.minWidth = 175;
@@ -1791,7 +1791,7 @@ namespace VisualAdjustments2
         {
             try
             {
-                if ((int)type == 50) __result = "Visual";
+                if ((int)type == 50) __result = "视觉";
             }
             catch (Exception e)
             {
