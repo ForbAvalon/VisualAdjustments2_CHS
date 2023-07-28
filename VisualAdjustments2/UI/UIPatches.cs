@@ -628,7 +628,7 @@ namespace VisualAdjustments2
 
                         m_AnimToInt[(WeaponAnimationStyle)99] = 99;
                         m_IntToAnim[99] = (WeaponAnimationStyle)99;
-                        dropdown.options.Add(new TMP_Dropdown.OptionData("FX"));
+                        dropdown.options.Add(new TMP_Dropdown.OptionData("特效"));
                         /*foreach (var animstyle in enumList)
                         {
                             m_IntToAnim[]
