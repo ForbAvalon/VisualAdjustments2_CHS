@@ -100,7 +100,7 @@ namespace VisualAdjustments2
 #if DEBUG
                         Main.Logger.Log(c.NameForAcronym);
 #endif
-                        if (c.StartingItems.Any() && !c.PrestigeClass && !c.ToString().Contains("Scion"))
+                        if (c.StartingItems.Any() && !c.PrestigeClass && !c.ToString().Contains("Scion") && !c.ToString().Contains("PrototypeClass")) // Scion has no outfit, neither does PrototypeClass
                         {
                             m_Classes.Add((c.LocalizedName, c.AssetGuidThreadSafe));
                         }
@@ -597,7 +597,7 @@ namespace VisualAdjustments2
                         layout.minHeight = 35;
                         header.Find("Label").gameObject.SetActive(false);
                         var dropdown = newDropDown.GetComponent<TMP_DropdownWorkaround>();
-                        //Manual list of appropriate Animstyles and Indices so we dont have empety/unused ones.
+                        //Manual list of appropriate Animstyles and Indices so we don't have empty/unused ones.
                         Dictionary<int, WeaponAnimationStyle> m_IntToAnim = new Dictionary<int, WeaponAnimationStyle>();
                         Dictionary<WeaponAnimationStyle, int> m_AnimToInt = new Dictionary<WeaponAnimationStyle, int>();
                         var enumList = new Dictionary<WeaponAnimationStyle, string>()
@@ -1061,13 +1061,14 @@ namespace VisualAdjustments2
                                             new(156, 156));
                                         var iconGM = ColPicker.Find("OptionButton/Icon");
                                         iconGM.GetComponent<Image>().sprite = newSprite;
+                                        iconGM.localPosition = new((float)-25.5, (float)-25.5, 0);
                                     }
 
-                                    ColPicker.localPosition = new Vector3(398, -283, 0);
+                                    ColPicker.localPosition = new Vector3(-300, -283, 0);
                                     var window = ColPicker.Find("WindowContainer");
                                     window.Find("HeaderBlock").gameObject.SetActive(false);
                                     window.GetComponent<VerticalLayoutGroup>().padding.top = 35;
-                                    window.localPosition = new Vector3(193, 42, 0);
+                                    window.localPosition = new Vector3(921, 66, 0);
                                     var oldcomp2 = ColPicker.GetComponent<CharacterVisualSettingsPCView>();
                                     var newcomp2 = ColPicker.gameObject.AddComponent<EEColorPickerView>();
                                     newcomp2.SetupFromVisualSettings(oldcomp2);
@@ -1384,7 +1385,7 @@ namespace VisualAdjustments2
                     newselectionbar.transform.localScale = oldbar.transform.localScale;
                     //Add visual adjustments Window PCView
                     {
-                        var oldcomp = newgameobject.transform.parent.GetComponent<ServiceWindowsPCView>();
+                        var oldcomp = newgameobject.transform.parent.parent.parent.GetComponent<ServiceWindowsPCView>();
                         var compPCView = newgameobject.AddComponent<ServiceWindowsPCViewModified>();
 
                         var Doll = new GameObject("Doll");
@@ -1397,6 +1398,7 @@ namespace VisualAdjustments2
 #if DEBUG
                         Main.Logger.Log(DollPCView.ToString() + " << DollPCView");
                         Main.Logger.Log(cmp.ToString() + " << cmp");
+                        Main.Logger.Log(oldcomp.ToString() + " << oldcomp");
 #endif
                         DollPCView.m_CreateDollPCView = cmp;
                         DollPCView.m_CreateDollPCView.Button.OnLeftClick.AddListener(() =>
@@ -1404,7 +1406,7 @@ namespace VisualAdjustments2
                             DollPCView.ViewModel?.AddUnitPart();
                         });
 
-                        //  compPCView.m_Background = oldcomp.m_Background;
+                        compPCView.m_Background = oldcomp.m_Background;
                         compPCView.m_ServiceWindowMenuPcView = comp;
                         compPCView.m_EEPickerPCView = EEPickerPCView;
                         compPCView.m_EquipmentPCView = EquipmentPCView;
@@ -1831,11 +1833,7 @@ namespace VisualAdjustments2
 
                             swVM.AddDisposable(swVM.ServiceWindowsMenuVM.Value = vm);
                         }
-                        else
-                        {
-                        }
                     }
-                    return;
                 }
             }
             catch (Exception e)
