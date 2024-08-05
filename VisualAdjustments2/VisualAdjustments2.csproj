@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props" Condition="Exists('..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -10,14 +10,14 @@
   <PropertyGroup>
     <LangVersion>9</LangVersion>
   </PropertyGroup>
-  <Target Name="Publicise" AfterTargets="Clean">
+  <Target Name="Publicise" BeforeTargets="Clean">
     <ItemGroup>
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\Assembly-CSharp.dll" />
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\Owlcat.Runtime.UI.dll" />
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\UnityEngine.UI.dll" />
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\UnityEngine.UIModule.dll" />
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\UnityEngine.CoreModule.dll" />
-      <PubliciseInputAssemblies Include="$(InstallDir)\Wrath_Data\Managed\UnityEngine.AssetBundleModule.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Assembly-CSharp.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.UI.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.UI.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.UIModule.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.CoreModule.dll" />
+      <PubliciseInputAssemblies Include="E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.AssetBundleModule.dll" />
     </ItemGroup>
     <Publicise InputAssemblies="@(PubliciseInputAssemblies)" OutputPath="$(SolutionDir)lib/" PubliciseCompilerGenerated="true" />
   </Target>
@@ -144,108 +144,104 @@
   <ItemGroup>
     
     <Reference Include="0Harmony">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
     </Reference>
     
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RespecModRepo\RespecWrath\lib\Assembly-CSharp_public.dll</HintPath>
-    </Reference>
+    
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp_public, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Assembly-CSharp_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\Assembly-CSharp_public.dll</HintPath>
     </Reference>
     <Reference Include="Boo.Lang">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Boo.Lang.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="DXTCompressor">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\DXTCompressor.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\DXTCompressor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Framework">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Owlcat.Runtime.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Owlcat.Runtime.UI">
-      <HintPath>..\lib\Owlcat.Runtime.UI_public.dll</HintPath>
-    </Reference>
+    
     <Reference Include="Owlcat.Runtime.UI_public">
-      <HintPath>..\lib\Owlcat.Runtime.UI_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\Owlcat.Runtime.UI_public.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.UniRx">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Owlcat.Runtime.UniRx.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.UniRx.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.Validation">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Owlcat.Runtime.Validation.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.Validation.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.Runtime.Visual">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
     </Reference>
     <Reference Include="Owlcat.SharedTypes">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Owlcat.SharedTypes.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.SharedTypes.dll</HintPath>
     </Reference>
     <Reference Include="Rewired_Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Rewired_Core.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Rewired_Core.dll</HintPath>
     </Reference>
     <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UniRx">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UniRx.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UniRx.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule_public, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\UnityEngine.AssetBundleModule_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\UnityEngine.AssetBundleModule_public.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule_public">
-      <HintPath>..\lib\UnityEngine.CoreModule_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\UnityEngine.CoreModule_public.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule_public">
-      <HintPath>..\lib\UnityEngine.UIModule_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\UnityEngine.UIModule_public.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI_public">
-      <HintPath>..\lib\UnityEngine.UI_public.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\publicized_assemblies\UnityEngine.UI_public.dll</HintPath>
     </Reference>
     <Reference Include="UnityModManager">
-      <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityModManager\UnityModManager.dll</HintPath>
+      <HintPath>E:\GOG\Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\UnityModManager\UnityModManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -262,9 +258,9 @@
     <Error Condition="!Exists('..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>echo "$(TargetPath)" "&gt;$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).dll*"
-      xcopy /Y "$(TargetPath)" "$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).dll*"
-      xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(InstallDir)\Mods\$(ProjectName)\$(ProjectName).pdb*"
+    <PostBuildEvent>echo "$(TargetPath)" "&gt;E:\GOG\Games\Pathfinder Wrath of the Righteous\Mods\$(ProjectName)\$(ProjectName).dll*"
+      xcopy /Y "$(TargetPath)" "E:\GOG\Games\Pathfinder Wrath of the Righteous\Mods\$(ProjectName)\$(ProjectName).dll*"
+      xcopy /Y "$(TargetDir)$(TargetName).pdb" "E:\GOG\Games\Pathfinder Wrath of the Righteous\Mods\$(ProjectName)\$(ProjectName).pdb*"
     </PostBuildEvent>
   </PropertyGroup>
 </Project>
