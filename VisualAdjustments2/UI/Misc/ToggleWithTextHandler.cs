@@ -12,8 +12,8 @@ namespace VisualAdjustments2.UI
 {
     public class ToggleWithTextHandler : MonoBehaviour
     {
-        public const string txtIfTrue = "Whitelist";
-        public const string txtIfFalse = "Blacklist";
+        public const string txtIfTrue = "白名单模式";
+        public const string txtIfFalse = "黑名单模式";
         public void Setup(OwlcatButton button, TextMeshProUGUI txt)
         {
 

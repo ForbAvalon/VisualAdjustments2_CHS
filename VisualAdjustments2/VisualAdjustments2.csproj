@@ -3,7 +3,7 @@
   <Import Project="..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props" Condition="Exists('..\packages\Aze.Publicise.MSBuild.Task.1.0.0\build\Aze.Publicise.MSBuild.Task.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-	<WrathPath>E:\GOG\Games\Pathfinder Wrath of the Righteous</WrathPath>
+    <WrathPath>E:\GOG\Games\Pathfinder Wrath of the Righteous</WrathPath>
     <InstallDir Condition=" '$(InstallDir)' == '' ">$(WrathPath)</InstallDir>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -143,11 +143,9 @@
     <Compile Include="UI\VMs\New\VisualAdjustments2VM.cs" />
   </ItemGroup>
   <ItemGroup>
-    
     <Reference Include="0Harmony">
       <HintPath>$(InstallDir)\Wrath_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
     </Reference>
-    
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\RespecModRepo\RespecWrath\lib\Assembly-CSharp_public.dll</HintPath>
     </Reference>
@@ -168,6 +166,7 @@
     <Reference Include="Microsoft.Build.Framework">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(InstallDir)\Wrath_Data\Managed\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
@@ -253,6 +252,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Todo.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
