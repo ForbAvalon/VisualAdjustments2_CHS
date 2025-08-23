@@ -88,7 +88,7 @@ namespace VisualAdjustments2
                 if (m_Classes == null)
                 {
                     m_Classes = new List<(string, string)>();
-                    m_Classes.Add(("Default", ""));
+                    m_Classes.Add(("默认", ""));
                     var bps = Kingmaker.Cheats.Utilities.GetAllBlueprints();
 #if DEBUG
                     Main.Logger.Log(bps.Entries.Where(a => a.Type == typeof(BlueprintCharacterClass)).Count() +
@@ -603,20 +603,20 @@ namespace VisualAdjustments2
                         Dictionary<WeaponAnimationStyle, int> m_AnimToInt = new Dictionary<WeaponAnimationStyle, int>();
                         var enumList = new Dictionary<WeaponAnimationStyle, string>()
                         {
-                            [WeaponAnimationStyle.Bow] = "Bows",
-                            [WeaponAnimationStyle.Crossbow] = "Crossbows",
-                            [WeaponAnimationStyle.Dagger] = "Daggers",
-                            [WeaponAnimationStyle.ThrownStraight] = "Dart/Javelin",
-                            [WeaponAnimationStyle.Double] = "Double Bladed/Quarterstaves",
-                            [WeaponAnimationStyle.Fencing] = "Fencing Blades",
-                            [WeaponAnimationStyle.PiercingOneHanded] = "One-Handed Polearms",
-                            [WeaponAnimationStyle.SlashingOneHanded] = "One-Handed Slashing/Blunt Weapons",
-                            [WeaponAnimationStyle.Fist] = "Punching Daggers",
-                            [WeaponAnimationStyle.Shield] = "Shields",
-                            [WeaponAnimationStyle.ThrownArc] = "Throwing Axes",
-                            [WeaponAnimationStyle.AxeTwoHanded] = "Two Handed Axes",
-                            [WeaponAnimationStyle.PiercingTwoHanded] = "Two-Handed Polearms",
-                            [WeaponAnimationStyle.SlashingTwoHanded] = "Two-Handed Slashing/Blunt Weapons",
+                            [WeaponAnimationStyle.Bow] = "弓",
+                            [WeaponAnimationStyle.Crossbow] = "十字弩",
+                            [WeaponAnimationStyle.Dagger] = "匕首",
+                            [WeaponAnimationStyle.ThrownStraight] = "飞镖/标枪",
+                            [WeaponAnimationStyle.Double] = "双头武器/木棍",
+                            [WeaponAnimationStyle.Fencing] = "决斗剑",
+                            [WeaponAnimationStyle.PiercingOneHanded] = "单手长柄武器",
+                            [WeaponAnimationStyle.SlashingOneHanded] = "单手挥砍/钝击武器",
+                            [WeaponAnimationStyle.Fist] = "拳匕",
+                            [WeaponAnimationStyle.Shield] = "盾牌",
+                            [WeaponAnimationStyle.ThrownArc] = "飞斧",
+                            [WeaponAnimationStyle.AxeTwoHanded] = "双手斧",
+                            [WeaponAnimationStyle.PiercingTwoHanded] = "双手长柄武器",
+                            [WeaponAnimationStyle.SlashingTwoHanded] = "双手挥砍/钝击武器",
                             //[(WeaponAnimationStyle)14] = "Enchant"
                         };
                         for (int i = 0; i < enumList.Count(); i++)
@@ -686,7 +686,7 @@ namespace VisualAdjustments2
                                 .gameObject.SetActive(false);
                             clickablePageNav.transform.SetParent(page);
                             var lbl = clickablePageNav.Find("Label").GetComponent<TextMeshProUGUI>();
-                            lbl.text = "Weapon Set";
+                            lbl.text = "武器设置";
                             lbl.verticalAlignment = VerticalAlignmentOptions.Geometry;
                             clickablePageNav.localScale = new Vector3(1, 1, 1);
                             clickablePageNav.GetComponent<LayoutElement>().minWidth = 545;
@@ -758,7 +758,7 @@ namespace VisualAdjustments2
                                     .GetComponent<Image>());
 
                                 PrimButton.Find("FinneanLabel").gameObject.SetActive(false);
-                                PrimButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Main Hand";
+                                PrimButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "主手武器";
                                 PrimButton.gameObject.AddComponent<LayoutElement>();
 
                                 var SecButton = UnityEngine.GameObject.Instantiate(
@@ -774,7 +774,7 @@ namespace VisualAdjustments2
 
 
                                 SecButton.Find("FinneanLabel").gameObject.SetActive(false);
-                                SecButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "Off Hand";
+                                SecButton.Find("StashLabel").GetComponent<TextMeshProUGUI>().text = "副手武器";
                                 SecButton.gameObject.AddComponent<LayoutElement>();
 
                                 togglegroup.Setup(PrimButton.GetComponent<OwlcatButton>(),
@@ -953,7 +953,7 @@ namespace VisualAdjustments2
                             {
                                 var newheader = GameObject.Instantiate(lblgm.parent, parent);
                                 var lbl2 = newheader.Find("Label").GetComponent<TextMeshProUGUI>();
-                                lbl2.text = "Class Outfit";
+                                lbl2.text = "职业装束";
 
 
                                 var superparent = new GameObject("superparent2");
